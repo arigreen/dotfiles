@@ -1,1 +1,2 @@
-DOTFILES_DIRS="$HOME/dotfiles"
+DOTFILES_DIRS="$HOME/stripe-dotfiles $HOME/dotfiles"
+EXCLUDES="README.md"
