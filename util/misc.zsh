@@ -72,14 +72,6 @@ plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-# Copied from go/zsh
-autoload -Uz compinit; compinit
-autoload -Uz bashcompinit; bashcompinit
-source ~/.bash_profile
-source ~/.bashrc
-eval "$(nodenv init -)"
-compdef _git stripe-git=git
-# END Copied from go/zsh
 
 # User configuration
 

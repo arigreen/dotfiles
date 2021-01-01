@@ -1,2 +1,3 @@
 DOTFILES_DIRS="$HOME/stripe-dotfiles $HOME/dotfiles"
 EXCLUDES="README.md"
+SYMLINK_DIRS="main stripe util"
