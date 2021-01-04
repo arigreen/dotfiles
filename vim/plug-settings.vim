@@ -14,21 +14,20 @@ call ale#linter#Define('ruby', {
 \   'project_root': $HOME . '/stripe/pay-server',
 \})
 
-if !exists("g:ale_linters")
-    let g:ale_linters = {}
-endif
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '▲'
 
-if !exists("g:ale_fixers")
-    let g:ale_fixers = {}
-endif
-
-let g:ale_fixers['ruby'] = ['sorbet']
+let g:ale_linters = {}
+let g:ale_fixers = {}
 
 if fnamemodify(getcwd(), ':p') =~ $HOME.'/stripe/pay-server'
-  let g:ale_linters['ruby'] = ['sorbet-payserver']
+  let g:ale_linters['ruby'] = ['rubocop', 'sorbet-payserver']
 else
-  let g:ale_linters['ruby'] = ['sorbet']
-end
+  let g:ale_linters['ruby'] = ['rubocop', 'sorbet']
+
+endif
+
+let g:ale_ruby_rubocop_executable = 'bundle'
 
 " Bind <leader>d to go-to-definition.
 nmap <silent> <leader>d <Plug>(ale_go_to_definition)
