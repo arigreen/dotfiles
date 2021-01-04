@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
+Plug 'w0rp/ale'
 call plug#end()
 
 " General 'set xyz', 'command', and 'map' settings
