@@ -3,7 +3,7 @@
 
 [user]
         name = "Ari Greenberg"
-        email = "arigreenberg@stripe.com"
+        email = "arigreenberg@gmail.com"
 
 [push]
         default = simple
