@@ -71,4 +71,4 @@ load_module ~/.util/after.sh
 #done
 
 # load settings specific to stripe
-load_module ~/.stripe/.zshrc
+load_module ~/.stripe/zshrc
