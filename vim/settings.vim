@@ -1,6 +1,7 @@
 set termguicolors
 set background=dark
 
+inoremap jj <Esc>
 
 " Navigate tabs
 nnoremap <C-h> :tabprev<CR>
