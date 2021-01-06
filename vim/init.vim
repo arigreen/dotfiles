@@ -25,6 +25,9 @@ source $HOME/.vim/settings.vim
 " Everything else: plugin settings.
 source $HOME/.vim/plug-settings.vim
 
+" Stripe-specific plugin settings
+source $HOME/.stripe/vim/plug-settings.vim
+
 " This needs to go after nord-specific variables are set
 colorscheme nord
 
