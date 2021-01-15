@@ -31,4 +31,3 @@ source $HOME/.stripe/vim/plug-settings.vim
 
 " This needs to go after nord-specific variables are set
 colorscheme nord
-

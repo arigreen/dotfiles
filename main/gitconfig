@@ -5,6 +5,8 @@
         name = "Ari Greenberg"
         email = "arigreenberg@gmail.com"
 
+[pull]
+        rebase = false
 [push]
         default = simple
 

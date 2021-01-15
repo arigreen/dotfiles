@@ -23,3 +23,7 @@ let g:ale_command_wrapper = $HOME . '/dotfiles/ale/ale_wrap.sh'
 " Nord
 let g:nord_italic=1
 let g:nord_italic_comments=1
+
+" Vimwiki
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
