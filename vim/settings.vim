@@ -2,9 +2,9 @@ set termguicolors
 set background=dark
 
 inoremap jj <Esc>
-set splitbelow
+" set splitbelow
 set hidden
-set nowrap
+set wrap
 
 " Navigate tabs
 nnoremap <C-h> :tabprev<CR>

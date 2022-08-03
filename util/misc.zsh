@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -58,7 +58,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true" # Disabled as per go/zsh
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
 # see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -99,3 +99,44 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+setopt nosharehistory
+
+RPROMPT="%{$fg[green]%}[%D{%c}]"
+
+# History settings
+HISTSIZE=100000
+HISTFILESIZE=100000
+setopt EXTENDED_HISTORY
+
+rtags() {
+  echo 'running ripper-tags'
+  find . \( -name 'build' -o -name 'log' -o -name 'node_modules' -o -name 'target' \) -prune -o -name '*.rb' -print0 | xargs -0 -P 6 -n 3000 ripper-tags -f - | LC_ALL=C sort -u --radixsort >> tmp_tags
+  [[ -f ./tags ]] && rm ./tags && echo 'rm ./tags'
+  mv tmp_tags tags
+}
+
+# source ~/.zsh/git-prompt.zsh/git-prompt.zsh
+
+# ZSH_GIT_PROMPT_SHOW_UPSTREAM="no"
+# 
+# ZSH_THEME_GIT_PROMPT_PREFIX="["
+# ZSH_THEME_GIT_PROMPT_SUFFIX="] "
+# ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+# ZSH_THEME_GIT_PROMPT_DETACHED="%{$fg_bold[cyan]%}:"
+# ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+# ZSH_THEME_GIT_PROMPT_UPSTREAM_SYMBOL="%{$fg_bold[yellow]%}⟳ "
+# ZSH_THEME_GIT_PROMPT_UPSTREAM_PREFIX="%{$fg[red]%}(%{$fg[yellow]%}"
+# ZSH_THEME_GIT_PROMPT_UPSTREAM_SUFFIX="%{$fg[red]%})"
+# ZSH_THEME_GIT_PROMPT_BEHIND="↓"
+# ZSH_THEME_GIT_PROMPT_AHEAD="↑"
+# ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}✖"
+# ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[green]%}●"
+# ZSH_THEME_GIT_PROMPT_UNSTAGED="%{$fg[red]%}✚"
+# ZSH_THEME_GIT_PROMPT_UNTRACKED="…"
+# ZSH_THEME_GIT_PROMPT_STASHED="%{$fg[blue]%}⚑"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}✔"
+# 
+# PROMPT='%B%40<..<%~ %b$(gitprompt)'
+# PROMPT+='%(?.%(!.%F{white}❯%F{yellow}❯%F{red}.%F{blue}❯%F{cyan}❯%F{green})❯%f.%F{red}❯❯❯%f) '
+# RPROMPT=''

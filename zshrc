@@ -72,3 +72,5 @@ load_module ~/.util/after.sh
 
 # load settings specific to stripe
 load_module ~/.stripe/zshrc
+
+export PATH="$PATH:$HOME/stripe/work/exe"

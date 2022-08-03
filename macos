@@ -2,3 +2,11 @@
 Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Install neovim 0.5
+brew unlink neovim
+brew install cmake
+brew install luarocks
+brew unlink luajit
+brew install --HEAD luajit
+brew install --HEAD neovim
